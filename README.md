@@ -13,6 +13,6 @@
                   kapacitet_dvorane	- koliko gledaoca stane u glavnu dvoranu
                   punoime_igraca	- puno ime najboljih igrača
                   punoime_pomocnika - puno ime pomoćnog trenera
-##### verzija : 1.0.
+##### verzija : 1.0
 ###### ključne riječi : rukomet, njemačka, klubovi, najbolji
 ####### datum izdavanja : 29.10.2021.
