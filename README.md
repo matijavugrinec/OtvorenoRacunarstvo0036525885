@@ -15,4 +15,4 @@
                   punoime_pomocnika - puno ime pomoćnog trenera
 ##### verzija : 1.0
 ###### datum izdavanja : 29.10.2021.
-####### ključne riječi : rukomet, njemačka, klubovi, najbolji
+###### ključne riječi : rukomet, njemačka, klubovi, najbolji
