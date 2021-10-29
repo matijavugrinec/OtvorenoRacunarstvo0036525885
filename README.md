@@ -1,4 +1,5 @@
-# OtvorenoRacunarstvo0036525885 - najbolji njemački rukometni klubovi
+# OtvorenoRacunarstvo0036525885 
+## najbolji njemački rukometni klubovi
 ## Licence: Creative Commons
 ### Autor: Matija Vugrinec
 #### jezik podataka: hrvatski
