@@ -1,2 +1,5 @@
 # OtvorenoRacunarstvo0036525885
-Repozitorij za labos iz otvorenog računarstva
+## Licence: Creative Commons
+### Autor: Matija Vugrinec
+#### jezik podataka: hrvatski
+#####
