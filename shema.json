@@ -1,0 +1,222 @@
+{
+    "$id": "http://example.com/example.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "default": [],
+    "description": "Najbolji njemački rukometni klubovi",
+    "examples": [
+        [
+            {
+                "naziv_kluba": "Bergischer HC",
+                "mjesto_sjedista": "Düsseldorf",
+                "glavni_trener": "Jörg Föste",
+                "godina_osnutka": 2006,
+                "pozicija2021": 12,
+                "ime_dvorane": "ISS DOME",
+                "naziv_lige": "Handball-Bundesliga",
+                "kapacitet_dvorane": 12500,
+                "punoime_pomocnika": "Oliver Schuhmacher",
+                "igraci": [
+                    "David Schmidt",
+                    "Tomáš Babák",
+                    "Linus Arnesson",
+                    "Tom Kåre Nikolaisen",
+                    "Arnór Þór Gunnarsson",
+                    "Jeffrey Boomhouwer",
+                    "Tomáš Mrkva"
+                ]
+            },
+            {
+                "naziv_kluba": "Frisch Auf Göppingen",
+                "mjesto_sjedista": "Göppingen",
+                "glavni_trener": "Hartmut Mayerhoffer",
+                "godina_osnutka": 1896,
+                "pozicija2021": 7,
+                "ime_dvorane": "EWS Arena",
+                "naziv_lige": "Handball-Bundesliga",
+                "kapacitet_dvorane": 5600,
+                "punoime_pomocnika": "Rolf Brack",
+                "igraci": [
+                    "Tobias Ellebæk",
+                    "Urh Kastelic",
+                    "Marcel Schiller",
+                    "Marco Rentschler",
+                    "Krešimir Kozina",
+                    "Janus Daði Smárason",
+                    "Nemanja Zelenović"
+                ]
+            }
+        ]
+    ],
+    "title": "OtvorenoRacunarstvo0036525885",
+    "type": "array",
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "naziv_kluba": "Bergischer HC",
+                        "mjesto_sjedista": "Düsseldorf",
+                        "glavni_trener": "Jörg Föste",
+                        "godina_osnutka": 2006,
+                        "pozicija2021": 12,
+                        "ime_dvorane": "ISS DOME",
+                        "naziv_lige": "Handball-Bundesliga",
+                        "kapacitet_dvorane": 12500,
+                        "punoime_pomocnika": "Oliver Schuhmacher",
+                        "igraci": [
+                            "David Schmidt",
+                            "Tomáš Babák",
+                            "Linus Arnesson",
+                            "Tom Kåre Nikolaisen",
+                            "Arnór Þór Gunnarsson",
+                            "Jeffrey Boomhouwer",
+                            "Tomáš Mrkva"
+                        ]
+                    }
+                ],
+                "required": [
+                    "naziv_kluba",
+                    "mjesto_sjedista",
+                    "glavni_trener",
+                    "godina_osnutka",
+                    "pozicija2021",
+                    "ime_dvorane",
+                    "naziv_lige",
+                    "kapacitet_dvorane",
+                    "punoime_pomocnika",
+                    "igraci"
+                ],
+                "properties": {
+                    "naziv_kluba": {
+                        "$id": "#/items/anyOf/0/properties/naziv_kluba",
+                        "default": "",
+                        "description": "naziv kluba u ovoj instanci",
+                        "examples": [
+                            "Bergischer HC"
+                        ],
+                        "title": "naziv_kluba",
+                        "type": "string"
+                    },
+                    "mjesto_sjedista": {
+                        "$id": "#/items/anyOf/0/properties/mjesto_sjedista",
+                        "default": "",
+                        "description": "mjesto u kojem klub ima sjedište",
+                        "examples": [
+                            "Düsseldorf"
+                        ],
+                        "title": "The mjesto_sjedista schema",
+                        "type": "string"
+                    },
+                    "glavni_trener": {
+                        "$id": "#/items/anyOf/0/properties/glavni_trener",
+                        "default": "",
+                        "description": "ime i prezime glavnog trenera",
+                        "examples": [
+                            "Jörg Föste"
+                        ],
+                        "title": "The glavni_trener schema",
+                        "type": "string"
+                    },
+                    "godina_osnutka": {
+                        "$id": "#/items/anyOf/0/properties/godina_osnutka",
+                        "default": 0,
+                        "description": "godina koje je klub osnovan",
+                        "examples": [
+                            2006
+                        ],
+                        "title": "The godina_osnutka schema",
+                        "type": "integer"
+                    },
+                    "pozicija2021": {
+                        "$id": "#/items/anyOf/0/properties/pozicija2021",
+                        "default": 0,
+                        "description": "pozicija na tablici u sezoni 2020/2021.",
+                        "examples": [
+                            12
+                        ],
+                        "title": "The pozicija2021 schema",
+                        "type": "integer"
+                    },
+                    "ime_dvorane": {
+                        "$id": "#/items/anyOf/0/properties/ime_dvorane",
+                        "default": "",
+                        "description": "ime dvorane u kojoj klub igra",
+                        "examples": [
+                            "ISS DOME"
+                        ],
+                        "title": "The ime_dvorane schema",
+                        "type": "string"
+                    },
+                    "naziv_lige": {
+                        "$id": "#/items/anyOf/0/properties/naziv_lige",
+                        "default": "",
+                        "description": "naziv lige u kojoj se klub natječe",
+                        "examples": [
+                            "Handball-Bundesliga"
+                        ],
+                        "title": "The naziv_lige schema",
+                        "type": "string"
+                    },
+                    "kapacitet_dvorane": {
+                        "$id": "#/items/anyOf/0/properties/kapacitet_dvorane",
+                        "default": 0,
+                        "description": "broj koliko ljudi može doći gledati utakmicu u njihovu dvranu",
+                        "examples": [
+                            12500
+                        ],
+                        "title": "The kapacitet_dvorane schema",
+                        "type": "integer"
+                    },
+                    "punoime_pomocnika": {
+                        "$id": "#/items/anyOf/0/properties/punoime_pomocnika",
+                        "default": "",
+                        "description": "ime i prezie pomocnika",
+                        "examples": [
+                            "Oliver Schuhmacher"
+                        ],
+                        "title": "The punoime_pomocnika schema",
+                        "type": "string"
+                    },
+                    "igraci": {
+                        "$id": "#/items/anyOf/0/properties/igraci",
+                        "default": [],
+                        "description": "najbolji igrači u klubu",
+                        "examples": [
+                            [
+                                "David Schmidt",
+                                "Tomáš Babák"
+                            ]
+                        ],
+                        "title": "The igraci schema",
+                        "type": "array",
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/igraci/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/igraci/items/anyOf/0",
+                                    "default": "",
+                                    "description": "jedan od najboljih igrača u klubu",
+                                    "examples": [
+                                        "David Schmidt",
+                                        "Tomáš Babák"
+                                    ],
+                                    "title": "The first anyOf schema",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}
