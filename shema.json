@@ -137,7 +137,7 @@
                     "pozicija2021": {
                         "$id": "#/items/anyOf/0/properties/pozicija2021",
                         "default": 0,
-                        "description": "pozicija na tablici u sezoni 2020/2021.",
+                        "description": "pozicija na tablici u sezoni 2020/2021. -> 0 ako se tek ove godine plasirao klub u ligu u kojoj je ove godine",
                         "examples": [
                             12
                         ],
@@ -167,7 +167,7 @@
                     "kapacitet_dvorane": {
                         "$id": "#/items/anyOf/0/properties/kapacitet_dvorane",
                         "default": 0,
-                        "description": "broj koliko ljudi može doći gledati utakmicu u njihovu dvranu",
+                        "description": "broj koliko ljudi može doći gledati utakmicu u njihovu dvorani",
                         "examples": [
                             12500
                         ],
@@ -177,7 +177,7 @@
                     "punoime_pomocnika": {
                         "$id": "#/items/anyOf/0/properties/punoime_pomocnika",
                         "default": "",
-                        "description": "ime i prezie pomocnika",
+                        "description": "ime i prezime pomocnika",
                         "examples": [
                             "Oliver Schuhmacher"
                         ],
