@@ -6,6 +6,8 @@ const pg = require('pg')
 const db = require('./db')
 const session = require('express-session')
 const pgSession = require('connect-pg-simple')(session)
+const bodyParser = require('body-parser')
+
 
 
 
@@ -14,8 +16,8 @@ const pgSession = require('connect-pg-simple')(session)
 const indexRouter = require('./routes/index.routes');
 const datatableRouter = require('./routes/datatable.routes');
 const dataRouter = require('./routes/data.routes');
-
-
+const apiRouter = require('./routes/apiRouter.routes')
+const defaultRouter = require('./routes/defaultRouter.routes')
 
 
 
@@ -30,6 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //middleware - dekodiranje parametara
 app.use(express.urlencoded({ extended: true }));
 
+app.use(bodyParser.json());
+
+//support parsing of application/x-www-form-urlencoded post data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //pohrana sjednica u postgres bazu korštenjem connect-pg-simple modula
@@ -51,9 +57,12 @@ app.use(
 app.use('/', indexRouter);
 app.use('/datatable', datatableRouter);
 app.use('/data',dataRouter);
+app.use('/v1/klubovi',apiRouter)
+
+app.use('*',defaultRouter);
 
 
 //pokretanje poslužitelja na portu 80
-app.listen('80','192.168.1.180', () => {
+app.listen('80','localhost', () => {
   console.info(`server started on port 80)`);
 });
