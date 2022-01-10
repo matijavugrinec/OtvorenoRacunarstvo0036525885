@@ -1,0 +1,382 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Italic.woff2") format("woff2"), url("../fonts/Roboto-Italic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-MediumItalic.woff2") format("woff2"), url("../fonts/Roboto-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-BlackItalic.woff2") format("woff2"), url("../fonts/Roboto-BlackItalic.woff") format("woff");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-LightItalic.woff2") format("woff2"), url("../fonts/Roboto-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-BoldItalic.woff2") format("woff2"), url("../fonts/Roboto-BoldItalic.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/Roboto-ThinItalic.woff2") format("woff2"), url("../fonts/Roboto-ThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../fonts/DancingScript-Bold.woff2") format("woff2"), url("../fonts/DancingScript-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../fonts/DancingScript-Medium.woff2") format("woff2"), url("../fonts/DancingScript-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../fonts/DancingScript-Regular.woff2") format("woff2"), url("../fonts/DancingScript-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../fonts/DancingScript-SemiBold.woff2") format("woff2"), url("../fonts/DancingScript-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+    src: url("../fonts/DancingScript-Regular.woff2") format("woff2"), url("../fonts/DancingScript-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+.primary-color-bg {
+    background-color: #f7f7f7;
+}
+
+.secondary-color-bg {
+    background-color: #ffffff;
+}
+
+.content {
+    color: #313131;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    position: relative;
+    flex-grow: 1;
+}
+
+.main-color {
+    color: #e0aacd;
+}
+
+.main-color-emphasized {
+    color: #ab4f8b;
+}
+
+.font-secondary {
+    font-family: 'Dancing Script', cursive;
+}
+
+.section {
+    overflow: auto;
+}
+
+.container {
+    margin: auto;
+    width: 700px;
+}
+
+.container-grid {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.container-grid-thirds {
+    grid-template-columns: 2fr 1fr;
+}
+
+@media only screen and (max-width: 1280px) {
+    .container-grid-thirds {
+        display: block;
+    }
+}
+
+.container-grid-halves {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 1280px) {
+    .container-grid-halves {
+        display: block;
+    }
+}
+
+.naslov-centrirani {
+    text-align: center;
+    
+}
+
+.list-item {
+    font-size: 30px;
+    
+}
+
+#naslov {
+    font-size: 60px;
+   
+    background-color: whitesmoke;
+    color: black;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+}
+.flexbox2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.smallbutton {
+        
+        font-size: 15px;
+}
+
+.podnaslov-boja {
+    font-size: 40px;
+    color: brown;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.form2 {
+    border: black;
+    border-radius: 2px;
+    border-style: dotted;
+    
+}
+
+table,th{
+    border: 1px solid black;
+    width: 150px;
+}
+
+.backcolor {
+    background-color: blanchedalmond;
+}
+
+label {
+    font-size: 25px;
+}
+
+.jumphref {
+    font-size: xx-large;
+    color: green;
+}
+
+footer {
+    position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.error {
+    background-color: rgb(255, 2, 2);
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.smallinput {
+    width: 65px
+}
+
+.extrasmallinput {
+    width: 35px;
+}
+
+.mediuminput {
+    width: 150px
+}
+.xsinput {
+    width: 55px;
+}
+.minimuminput {
+    width: 25px;
+}
+
+.uspjeh {
+    background-color: cornflowerblue;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+input {
+    height: 40px;
+    font-size: larger;
+}
+
+
+
+table.tablica3 td {
+   /* border-top: thin solid; */
+    border-bottom: thin solid;
+}
+
+table.tablica3 td:first-child {
+     border-left: thin solid;
+}
+
+table.tablica3 td:last-child {
+     border-right: thin solid;
+}
+
+
+ footer {
+    position: fixed;
+ }
+
+ 
+
+ .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #back {
+      background-color: red;
+  }
+
+
+  .menu {
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+  }
+  .menu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+  
+  .menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .menu a.active {
+    background-color: #04AA6D;
+    color: white;
+  }

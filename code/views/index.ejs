@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OtvorenoRacunarstvo0036525885</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="./images/yellred.jfif"/>
+    <link rel="stylesheet" type="text/css" href="./vendor/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Najbolji njemački rukometni klubovi">
+    <meta name="keywords" content="rukomet, njemačka, klubovi, najbolji">
+    <meta name="author" content="Matija Vugrinec">
+    
+    <script>
+
+       async function osvjezi() {           
+        
+           getData();
+           
+        }
+
+        let jsondata;
+
+        getData();
+            async function getData() {
+                
+                await fetch('/data')
+                .then (response => response.json())
+                .then(data => {
+                    jsondata = data;
+                });
+            }
+
+
+            function convertToCSV(objArray) {
+                var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+                var str = 'naziv_kluba,ime_dvorane,mjesto_sjedista,glavni_trener,godina_osnutka,pozicija2021,naziv_lige,kapacitet_dvorane,punoime_pomocnika,punoime_igraca' + '\r\n';
+
+                for (var i = 0; i < array.length; i++) {
+                    var line = '';
+                    
+                    for (var index in array[i]) {
+                        if (line != '') line += ','
+
+                        if(index != "ime_igraca"){
+                            
+                            line += array[i][index];
+                            console.log("" + line);
+                        } else {
+                            
+                            for(var index2 in array[i][index]){
+                                str += line + array[i][index][index2] + '\r\n';
+                            }
+                            
+                        }
+                    }
+                }
+
+                return str;
+            }
+
+            function returnCsv() {
+            
+
+                csv = convertToCSV(jsondata);
+                let csvContent = "data:text/csv;charset=utf-8," + csv; 
+
+                
+
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "rukometniKlubovi.csv");
+                document.body.appendChild(link); // Required for FF
+
+                link.click(); // This will download the data file named "my_data.csv".
+            }            
+            
+            function returnJson() {
+
+                let csvContent = "data:text/json;charset=utf-8," + JSON.stringify(jsondata); 
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "rukometniKlubovi.json");
+                document.body.appendChild(link); // Required for FF
+
+                link.click(); // This will download the data file named "my_data.csv".
+                
+            }  
+        
+    </script>
+</head>
+
+<body>
+
+    <br><br>
+    <% if (Auth == 1) { %>
+        
+    <button ><a href="/logout">LOGOUT</a></button>
+
+    <button onclick="osvjezi()">osvjezi</button>
+
+    <button ><a href="/profile">profile</a></button>
+
+    <% } else { %>
+
+    <button ><a href="/login">LOGIN</a></button>
+
+    <% } %>
+
+    <p style="font-size: 30px;">dohvati css: <button onclick="returnCsv()">CSV - Najbolji rukometni klubovi u njemačkoj</button></p>
+   
+   <p style="font-size: 30px;">dohvati json:  <button onclick="returnJson()">JSON - Najbolji rukometni klubovi u njemačkoj</button></p>
+
+   <p style="font-size: 30px;">prikazi datatable:  <a href="/datatable">datatable</a></p>
+
+   <hr>
+   <h1 style=" color: fuchsia;">Opis skupa podataka:</h1> 
+        <h1>ime projekta: OtvorenoRacunarstvo0036525885</h1>
+        <h2>naziv podataka: Najbolji njemački rukometni klubovi</h2>
+        <h2>Licence: Creative Commons</h2>
+        <h3>Autor: Matija Vugrinec</h3>
+        <h4>Jezik podataka: hrvatski</h4>
+        <h5>Atributi :
+            <p>naziv_kluba - puni naziv kluba</p>
+            <p>ime_dvorane - ime glavne dvorane u kojoj se igra većina utakmica</p>
+            <p>mjesto_sjedista	- grad koji predstavlja taj klub</p>
+            <p>glavni_trener - trenutni trener tog kluba</p>
+            <p>godina_osnutka - godina kada je osnovani klub</p>
+            <p>pozicija2021	- pozicija na kraju sezone 2020 2021 u ligi</p>
+            <p>naziv_lige	- koji je naziv lige u kojoj se takmiče</p>
+            <p>kapacitet_dvorane	- koliko gledaoca stane u glavnu dvoranu</p>
+            <p>punoime_igraca	- puno ime najboljih igrača</p>
+            <p>punoime_pomocnika - puno ime pomoćnog trenera</p>
+        </h5>
+        <h5>Verzija : 1.0
+        </h5>
+        <h6>Datum izdavanja : 29.10.2021.</h6>
+        <h6>Datum zadnje modifikacije: 29.10.2021.
+        </h6>
+        <h6>Ključne riječi : rukomet, njemačka, klubovi, najbolji
+        </h6>
+    
+</body>
+
+
+
+</html>

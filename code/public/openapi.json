@@ -1,0 +1,439 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "contact": {
+        "name": "matija",
+        "phone":"0998133790"
+      },
+      "title": "Usluga upravljanja podacima o najboljim rukometnim klubovima u Njemačkoj",
+      "version": "1.0",
+      "licence": "cc0"
+    },
+    "paths": {
+      "/v1/klubovi/": {
+        "get": {
+          "summary": "Get all clubs from collection",
+          "description": "Returns all clubs",
+          "produces": [
+            "application/json"
+            ],           
+          "responses": {
+            "200": {
+              "description": "Fetch successfull",
+              "parametars": [
+                  {
+                    "name":"naziv_kluba",
+                    "description" : "name of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_dvorane",
+                    "description" : "name of a stadium",
+                    "type":"string"
+                  },
+                  {
+                    "name":"mjesto",
+                    "description" : "name of a city of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"glavni_trener",
+                    "description" : "name of a club trener",
+                    "type":"string"
+                  },
+                  {
+                    "name":"god_osnutka",
+                    "description" : "est.",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"poz2021",
+                    "description" : "place on a table in season 20/21",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"naziv_lige",
+                    "description" : "name of a league that club plays in",
+                    "type":"string"
+                  },
+                  {
+                    "name":"kapacitet_dvorane",
+                    "description" : "num of seats in stadium",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"ime_pomocnika",
+                    "description" : "name of a club assistants",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_igraca",
+                    "description" : "name of a club players",
+                    "type":"string"
+                  }
+              ]
+            }
+          }
+        }
+      },
+    "/v1/klubovi/{id}"  : {
+        "get": {
+          "summary": "Get club from collection with that id",
+          "description": "Returns club with that id -> that name since id is a name",
+          "produces": [
+            "application/json"
+            ],           
+          "responses": {
+            "200": {
+              "description": "Fetch successfull",
+              "parametars": [
+                  {
+                    "name":"naziv_kluba",
+                    "description" : "name of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_dvorane",
+                    "description" : "name of a stadium",
+                    "type":"string"
+                  },
+                  {
+                    "name":"mjesto",
+                    "description" : "name of a city of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"glavni_trener",
+                    "description" : "name of a club trener",
+                    "type":"string"
+                  },
+                  {
+                    "name":"god_osnutka",
+                    "description" : "est.",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"poz2021",
+                    "description" : "place on a table in season 20/21",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"naziv_lige",
+                    "description" : "name of a league that club plays in",
+                    "type":"string"
+                  },
+                  {
+                    "name":"kapacitet_dvorane",
+                    "description" : "num of seats in stadium",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"ime_pomocnika",
+                    "description" : "name of a club assistants",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_igraca",
+                    "description" : "name of a club players",
+                    "type":"string"
+                  }
+              ]
+            },
+        "404" : {
+            "description": "Not found"
+        }
+          }
+        },
+        "delete" : {
+          "summary": "delete club from collection with that id",
+          "description": "deletes the club with that id or returns 404 if it doesnt exist",
+          "produces": [
+            "application/json"
+            ],           
+          "responses": {
+            "200": {
+              "description": "ok",
+              "message" : "Deleted the club with id {id} in database"
+                },
+            "404" : {
+                "description": "Not found"
+                }
+            }
+        },
+        "put" : {
+          "summary": "changes the club to the values set in body with json",
+          "description": "changes the club with new values",
+          "produces": [
+            "application/json"
+            ],
+          "exampleBody" : {
+            "naziv_kluba": "ppd zagreb",
+            "ime_dvorane": "dom sportova",
+            "mjesto_sjedista": "Zagreb",
+            "glavni_trener": "goluya",
+            "godina_osnutka": 1990,
+            "pozicija2021": 23,
+            "naziv_lige": "Handball-Bundesliga",
+            "kapacitet_dvorane": 7500,
+            "punoime_pomocnika": "Oliver horvat",
+            "ime_igraca": [
+                "ivan",
+                "petar"
+            ]
+        },           
+        "responses": {
+            "200": {
+              "description": "ok",
+              "message" : "edited the club with id {id} in database"
+                },
+            "404" : {
+                "description": "Not found"
+                },
+            "406" : {
+                "description":"Not Acceptable json"
+            }
+            }
+        },
+        "post" : {
+          "summary": "inserts the club with values set in body with json",
+          "description": "inserts the club with new values",
+          "produces": [
+            "application/json"
+            ],
+          "exampleBody" : {
+            "naziv_kluba": "ppd zagreb",
+            "ime_dvorane": "dom sportova",
+            "mjesto_sjedista": "Zagreb",
+            "glavni_trener": "goluya",
+            "godina_osnutka": 1990,
+            "pozicija2021": 23,
+            "naziv_lige": "Handball-Bundesliga",
+            "kapacitet_dvorane": 7500,
+            "punoime_pomocnika": "Oliver horvat",
+            "ime_igraca": [
+                "ivan",
+                "petar"
+            ]
+        },           
+        "responses": {
+            "200": {
+              "description": "ok",
+              "message" : "inserted the club with id {id} in database"
+                },
+            "406" : {
+                "description":"Not Acceptable json"
+            }
+            }
+        }
+      },
+      "/v1/klubovi/pozicija2021/{mjesto_na_tablici}" :  {
+        "get": {
+          "summary": "Get club from collection with at that place in season 20/21",
+          "description": "Returns club at that place in season 20/21",
+          "produces": [
+            "application/json"
+            ],           
+          "responses": {
+            "200": {
+              "description": "Fetch successfull",
+              "parametars": [
+                  {
+                    "name":"naziv_kluba",
+                    "description" : "name of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_dvorane",
+                    "description" : "name of a stadium",
+                    "type":"string"
+                  },
+                  {
+                    "name":"mjesto",
+                    "description" : "name of a city of a club",
+                    "type":"string"
+                  },
+                  {
+                    "name":"glavni_trener",
+                    "description" : "name of a club trener",
+                    "type":"string"
+                  },
+                  {
+                    "name":"god_osnutka",
+                    "description" : "est.",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"poz2021",
+                    "description" : "place on a table in season 20/21",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"naziv_lige",
+                    "description" : "name of a league that club plays in",
+                    "type":"string"
+                  },
+                  {
+                    "name":"kapacitet_dvorane",
+                    "description" : "num of seats in stadium",
+                    "type":"int64"
+                  },
+                  {
+                    "name":"ime_pomocnika",
+                    "description" : "name of a club assistants",
+                    "type":"string"
+                  },
+                  {
+                    "name":"ime_igraca",
+                    "description" : "name of a club players",
+                    "type":"string"
+                  }
+              ]
+            },
+        "404" : {
+            "description": "Not found any club at that position"
+        }
+          }
+        }
+
+      } ,
+      "/v1/klubovi/sjediste/{mjesto}" : {
+        "get": {
+            "summary": "Get club from collection from that city",
+            "description": "Returns club",
+            "produces": [
+              "application/json"
+              ],           
+            "responses": {
+              "200": {
+                "description": "Fetch successfull",
+                "parametars": [
+                    {
+                      "name":"naziv_kluba",
+                      "description" : "name of a club",
+                      "type":"string"
+                    },
+                    {
+                      "name":"ime_dvorane",
+                      "description" : "name of a stadium",
+                      "type":"string"
+                    },
+                    {
+                      "name":"mjesto",
+                      "description" : "name of a city of a club",
+                      "type":"string"
+                    },
+                    {
+                      "name":"glavni_trener",
+                      "description" : "name of a club trener",
+                      "type":"string"
+                    },
+                    {
+                      "name":"god_osnutka",
+                      "description" : "est.",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"poz2021",
+                      "description" : "place on a table in season 20/21",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"naziv_lige",
+                      "description" : "name of a league that club plays in",
+                      "type":"string"
+                    },
+                    {
+                      "name":"kapacitet_dvorane",
+                      "description" : "num of seats in stadium",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"ime_pomocnika",
+                      "description" : "name of a club assistants",
+                      "type":"string"
+                    },
+                    {
+                      "name":"ime_igraca",
+                      "description" : "name of a club players",
+                      "type":"string"
+                    }
+                ]
+              },
+          "404" : {
+              "description": "Not found any club from that city"
+          }
+            }
+          }
+      } ,
+      "/v1/klubovi/godina_osnutka/{godina}" : {
+        "get": {
+            "summary": "Get club from collection that is established at that year",
+            "description": "Returns club",
+            "produces": [
+              "application/json"
+              ],           
+            "responses": {
+              "200": {
+                "description": "Fetch successfull",
+                "parametars": [
+                    {
+                      "name":"naziv_kluba",
+                      "description" : "name of a club",
+                      "type":"string"
+                    },
+                    {
+                      "name":"ime_dvorane",
+                      "description" : "name of a stadium",
+                      "type":"string"
+                    },
+                    {
+                      "name":"mjesto",
+                      "description" : "name of a city of a club",
+                      "type":"string"
+                    },
+                    {
+                      "name":"glavni_trener",
+                      "description" : "name of a club trener",
+                      "type":"string"
+                    },
+                    {
+                      "name":"god_osnutka",
+                      "description" : "est.",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"poz2021",
+                      "description" : "place on a table in season 20/21",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"naziv_lige",
+                      "description" : "name of a league that club plays in",
+                      "type":"string"
+                    },
+                    {
+                      "name":"kapacitet_dvorane",
+                      "description" : "num of seats in stadium",
+                      "type":"int64"
+                    },
+                    {
+                      "name":"ime_pomocnika",
+                      "description" : "name of a club assistants",
+                      "type":"string"
+                    },
+                    {
+                      "name":"ime_igraca",
+                      "description" : "name of a club players",
+                      "type":"string"
+                    }
+                ]
+              },
+          "404" : {
+              "description": "Not found any club from that city"
+          }
+            }
+          }
+      }
+
+    } 
+  }
